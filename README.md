@@ -103,6 +103,7 @@ https://raw.githubusercontent.com/Mariux22/the-lockpicker/main/module.json
 ## 🤝 Credits
 
 - **Author:** Mariux22
+- **Original concept:** This module is a fork and extensive rework of **[Pick That Lock](https://github.com/blubbedi/pick-that-lock)** by **[blubbedi](https://github.com/blubbedi)**. Full credit for the original idea, UI design, and base module structure goes to them. This project would not exist without their work.
 - **System:** D&D 5e (`dnd5e`)
 - **Foundry VTT:** v13+ (verified 13.351)
 - **AI Assistance:** Claude — Anthropic (code, structure, logic & debugging)
