@@ -1,0 +1,38 @@
+<div class="lp-history-root">
+  <h2 class="lp-history-title">📋 {{localize "LOCKPICKING.History.Title"}}</h2>
+
+  {{#if history.length}}
+  <table class="lp-history-table">
+    <thead>
+      <tr>
+        <th>{{localize "LOCKPICKING.History.Date"}}</th>
+        <th>{{localize "LOCKPICKING.History.Actor"}}</th>
+        <th>{{localize "LOCKPICKING.History.Type"}}</th>
+        <th>DC</th>
+        <th>{{localize "LOCKPICKING.History.Result"}}</th>
+        <th>{{localize "LOCKPICKING.History.Mistakes"}}</th>
+        <th>{{localize "LOCKPICKING.History.Damage"}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each history}}
+      <tr class="{{#if this.success}}lp-history-success{{else}}lp-history-failure{{/if}}">
+        <td>{{this.date}}</td>
+        <td>{{this.actor}}</td>
+        <td>{{this.type}}{{#if this.phase}} (P{{this.phase}}){{/if}}</td>
+        <td>{{this.dc}}</td>
+        <td>{{#if this.success}}✅{{else}}❌{{/if}}</td>
+        <td>{{this.mistakes}}</td>
+        <td>{{#if this.damage}}{{this.damage}}{{else}}—{{/if}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+    <p class="lp-history-empty">{{localize "LOCKPICKING.History.Empty"}}</p>
+  {{/if}}
+
+  <div class="lp-history-footer">
+    <button type="button" id="lp-history-clear" class="lp-btn">{{localize "LOCKPICKING.History.Clear"}}</button>
+  </div>
+</div>

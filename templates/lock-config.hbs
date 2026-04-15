@@ -1,0 +1,131 @@
+<div class="lockpicking-config">
+
+  {{!-- Presets --}}
+  <div class="form-group lp-section-header">
+    <label class="lp-section-label">Presets</label>
+  </div>
+  <div class="form-group lp-presets-row">
+    <div class="lp-preset-controls">
+      <select id="lp-preset-select" class="lp-preset-select-big">
+        <option value="">— Select a preset —</option>
+        {{#each presets}}
+          <option value="{{this.dataJson}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <button type="button" id="lp-preset-load" class="lp-btn-medium">Load</button>
+      <button type="button" id="lp-preset-delete" class="lp-btn-medium lp-btn-danger">✕</button>
+    </div>
+  </div>
+
+  <hr class="lp-divider">
+
+  {{!-- Character --}}
+  <div class="form-group">
+    <label>Character</label>
+    <select id="lp-selection">
+      {{#each groups}}
+        <optgroup label="{{userName}}">
+          {{#each options}}
+            <option value="{{actorId}}|{{../userId}}">{{actorName}}</option>
+          {{/each}}
+        </optgroup>
+      {{/each}}
+    </select>
+  </div>
+
+  {{!-- Type --}}
+  <div class="form-group">
+    <label>Challenge Type</label>
+    <select id="lp-challenge-type">
+      <option value="lock">🔒 Lock</option>
+      <option value="trap">⚠ Trap</option>
+    </select>
+  </div>
+
+  {{!-- Roll mode --}}
+  <div class="form-group">
+    <label>Roll Condition</label>
+    <select id="lp-roll-mode">
+      <option value="normal">⚖️ Normal</option>
+      <option value="advantage">🟢 Advantage</option>
+      <option value="disadvantage">🔴 Disadvantage</option>
+    </select>
+  </div>
+
+  {{!-- DC --}}
+  <div class="form-group lp-dc-row">
+    <label>DC</label>
+    <div class="lp-dc-controls">
+      <input type="number" id="lp-dc" value="{{defaultDc}}" min="1" max="30" class="lp-dc-input">
+      <div class="lp-estimate-box">
+        <span class="lp-estimate-label">Time Estimate:</span>
+        <span id="lp-time-estimate" class="lp-estimate-value">—</span>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Trap-only fields --}}
+  <div class="form-group lp-trap-only" style="display:none;">
+    <label>Damage on failure</label>
+    <input type="text" id="lp-damage" value="2d6" placeholder="e.g. 2d6, 1d4+2">
+  </div>
+
+  <div class="form-group lp-trap-only" style="display:none;">
+    <label>Damage type</label>
+    <select id="lp-damage-type">
+      <option value="piercing">Piercing</option>
+      <option value="poison">Poison</option>
+      <option value="fire">Fire</option>
+      <option value="cold">Cold</option>
+      <option value="lightning">Lightning</option>
+      <option value="acid">Acid</option>
+      <option value="necrotic">Necrotic</option>
+      <option value="force">Force</option>
+    </select>
+  </div>
+
+
+  {{!-- Extreme Mode --}}
+  <div class="form-group">
+    <label class="lp-checkbox-label">
+      <input type="checkbox" id="lp-extreme-mode">
+      ⚡ Extreme Mode
+    </label>
+    <p class="notes">The sequence is shown for a few seconds, then hidden. You must memorize it before playing.</p>
+  </div>
+
+  <div class="form-group lp-extreme-only" style="display:none;">
+    <label>Memorization time (seconds)</label>
+    <input type="number" id="lp-extreme-memo-time" value="3" min="1" max="15" style="width:70px;">
+  </div>
+
+  <hr class="lp-divider">
+
+  {{!-- Allowed mistakes --}}
+  <div class="form-group">
+    <label>Allowed mistakes</label>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <input type="number" id="lp-allowed-mistakes" value="-1" min="-1" max="20" style="width:70px;">
+      <span class="notes" style="margin:0;">-1 = auto (Reliable Talent / module default)</span>
+    </div>
+  </div>
+
+  <hr class="lp-divider">
+
+  {{!-- Save preset --}}
+  <div class="form-group lp-save-preset-row">
+    <label>Save as preset</label>
+    <div class="lp-preset-save-controls">
+      <input type="text" id="lp-preset-name" class="lp-preset-name-small" placeholder="Preset name...">
+      <button type="button" id="lp-preset-save" class="lp-btn-medium">Save</button>
+    </div>
+  </div>
+
+  <hr class="lp-divider">
+
+  {{!-- Footer --}}
+  <div class="lp-config-footer">
+<button type="button" id="lp-submit" class="dialog-button default lp-btn-start">Start Minigame</button>
+  </div>
+
+</div>

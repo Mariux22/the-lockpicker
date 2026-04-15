@@ -1,0 +1,39 @@
+{
+  "id": "the-lockpicker",
+  "title": "The Lockpicker",
+  "description": "An interactive lockpicking and trap disarming minigame for D&D 5e. Features chained traps, extreme mode, extended key sets by DC, auto-damage, GM presets and history.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Mariux22",
+      "url": "https://github.com/Mariux22"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/style.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "packs": [],
+  "system": [
+    "dnd5e"
+  ],
+  "url": "https://github.com/Mariux22/the-lockpicker",
+  "manifest": "https://raw.githubusercontent.com/Mariux22/the-lockpicker/main/module.json",
+  "download": "https://github.com/Mariux22/the-lockpicker/releases/download/1.0.0/the-lockpicker-1.0.0.zip",
+  "license": "LICENSE",
+  "socket": true
+}
